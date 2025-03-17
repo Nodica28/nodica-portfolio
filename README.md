@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
+
+A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.
+
+## Features
+
+-   Responsive design that works on all devices
+-   Dark mode support
+-   Modern UI with smooth animations
+-   SEO optimized
+-   Fast performance
+-   Contact form
+
+## Sections
+
+-   Hero section with call-to-action buttons
+-   About Me section to showcase your background and skills
+-   Skills section with progress bars
+-   Projects section to showcase your work
+-   Contact section with a working form
+
+## Technologies Used
+
+-   [Next.js](https://nextjs.org/) - React framework for production
+-   [TypeScript](https://www.typescriptlang.org/) - Static type checking
+-   [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+-   [React](https://reactjs.org/) - JavaScript library for building user interfaces
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-   Node.js 18.17 or later
+-   npm or yarn
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    ```bash
+    git clone https://github.com/yourusername/portfolio.git
+    cd portfolio
+    ```
 
-## Learn More
+2. Install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Run the development server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
 
-## Deploy on Vercel
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Customization
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Personal Information
+
+Update your personal information in the following files:
+
+-   `src/components/sections/Hero.tsx` - Update your name and headline
+-   `src/components/sections/About.tsx` - Update your bio and personal details
+-   `src/components/sections/Skills.tsx` - Update your skills and proficiency levels
+-   `src/components/sections/Projects.tsx` - Add your own projects
+-   `src/components/sections/Contact.tsx` - Update your contact information
+-   `src/components/layout/Footer.tsx` - Update copyright information and social links
+
+### Images
+
+Replace the placeholder images with your own:
+
+1. Add your images to the `public` directory
+2. Update the image paths in the components
+
+### Styling
+
+The project uses Tailwind CSS for styling. You can customize the theme in the `tailwind.config.js` file.
+
+## Deployment
+
+This portfolio can be easily deployed to Vercel, Netlify, or any other hosting platform that supports Next.js.
+
+### Deploy to Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Acknowledgements
+
+-   [Next.js Documentation](https://nextjs.org/docs)
+-   [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+-   [React Documentation](https://reactjs.org/docs/getting-started.html)
