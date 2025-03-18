@@ -69,7 +69,8 @@ const About = () => {
 
                         {/* CTA Button */}
                         <a
-                            href="/your-resume.pdf"
+                            href="/pdf/Nicdao-Justine_Resume.pdf"
+                            download
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center px-6 py-3 bg-[var(--primary)] hover:bg-[var(--secondary)] text-white hover:text-[var(--primary)] font-medium rounded-lg transition-colors duration-300"

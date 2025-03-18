@@ -307,7 +307,7 @@ const TechStack = () => {
                             </div>
 
                             <div
-                                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                                className={`overflow-hidden transition-all duration-300 ease-linear ${
                                     expandedSections[
                                         category.id as keyof typeof expandedSections
                                     ]

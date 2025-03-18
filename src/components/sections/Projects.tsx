@@ -8,28 +8,6 @@ import { iconMap } from "@/app/assets/iconExporter";
 const Projects = () => {
     const projects = [
         {
-            title: "UI/UX Designer Portfolio",
-            description:
-                "A portfolio website for a UI/UX designer showcasing their work, skills, and design philosophy. The site includes case studies, client testimonials, and a projects section where the designer showcases their expertise in UI/UX design. It also features an interactive contact form for potential clients to get in touch.",
-            image: designerImage,
-            tags: ["Portfolio", "UI/UX", "Single Page", "Responsive"],
-            icon: [
-                "react",
-                "tailwind",
-                "mui",
-                "css",
-                "node",
-                "git",
-                "cursor",
-                "prettier",
-                "eslint",
-                "vite",
-                "vscode",
-            ],
-            liveUrl: "https://escotoaizel.vercel.app",
-            githubUrl: "https://github.com/escotoaizel/design.azl",
-        },
-        {
             title: "Iconad Learning with AI",
             description:
                 "Iconad Learning is an innovative educational platform that leverages artificial intelligence to provide personalized learning experiences for children. The platform analyzes a child's unique traits, interests, and learning style to recommend tailored educational materials that optimize their learning journey.",
@@ -67,30 +45,6 @@ const Projects = () => {
             githubUrl: "https://github.com/Nodica28/iconad-learning-ai",
         },
         {
-            title: "Weathery",
-            description:
-                "A weather application that provides real-time weather data, forecasts, and interactive maps. Uses geolocation and third-party weather APIs.",
-            image: weatheryImage,
-            tags: ["Weather", "API", "Tracking", "Forecast"],
-            icon: [
-                "nextjs",
-                "shadcn",
-                "tailwind",
-                "css",
-                "typescript",
-                "javascript",
-                "node",
-                "prettier",
-                "eslint",
-                "cursor",
-                "git",
-                "github",
-                "vscode",
-            ],
-            liveUrl: "https://weathery-pi.vercel.app/",
-            githubUrl: "https://github.com/Nodica28/Weathery",
-        },
-        {
             title: "SAUP Portal HAU",
             description:
                 "Developing this project required us to use the Mongodb Database wherein we fetch our data to be listed. The MERN tech stack is also utilized in order for this database to be funcional. ",
@@ -117,6 +71,52 @@ const Projects = () => {
             liveUrl: "https://saup-portal-hau.onrender.com",
             githubUrl: "https://github.com/Capstone-SAUP/SAUP-Portal",
         },
+        {
+            title: "Weathery",
+            description:
+                "A weather application that provides real-time weather data, forecasts, and interactive maps. Uses geolocation and third-party weather APIs.",
+            image: weatheryImage,
+            tags: ["Weather", "API", "Tracking", "Forecast"],
+            icon: [
+                "nextjs",
+                "shadcn",
+                "tailwind",
+                "css",
+                "typescript",
+                "javascript",
+                "node",
+                "prettier",
+                "eslint",
+                "cursor",
+                "git",
+                "github",
+                "vscode",
+            ],
+            liveUrl: "https://weathery-pi.vercel.app/",
+            githubUrl: "https://github.com/Nodica28/Weathery",
+        },
+        {
+            title: "UI/UX Designer Portfolio",
+            description:
+                "A portfolio website for a UI/UX designer showcasing their work, skills, and design philosophy. The site includes case studies, client testimonials, and a projects section where the designer showcases their expertise in UI/UX design. It also features an interactive contact form for potential clients to get in touch.",
+            image: designerImage,
+            tags: ["Portfolio", "UI/UX", "Single Page", "Responsive"],
+            icon: [
+                "react",
+                "tailwind",
+                "mui",
+                "css",
+                "node",
+                "git",
+                "cursor",
+                "prettier",
+                "eslint",
+                "vite",
+                "vscode",
+            ],
+            liveUrl: "https://escotoaizel.vercel.app",
+            githubUrl: "https://github.com/escotoaizel/design.azl",
+        },
     ];
 
     return (
@@ -126,7 +126,7 @@ const Projects = () => {
                     {projects.map((project, index) => (
                         <div
                             key={index}
-                            className="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+                            className="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col"
                         >
                             <div className="relative aspect-video">
                                 <Image
@@ -139,7 +139,7 @@ const Projects = () => {
                                 />
                             </div>
 
-                            <div className="p-6">
+                            <div className="p-6 pb-10 flex flex-col flex-grow">
                                 <div className="flex flex-wrap gap-2 mb-6">
                                     {project.tags.map((tag, tagIndex) => (
                                         <span
@@ -172,7 +172,7 @@ const Projects = () => {
                                                     color="#FFB9B9"
                                                     className="transition-transform duration-300 hover:scale-125"
                                                 />
-                                                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+                                                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-600 text-white text-md rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
                                                     {icon
                                                         .charAt(0)
                                                         .toUpperCase() +
@@ -186,7 +186,7 @@ const Projects = () => {
                                     {project.description}
                                 </p>
 
-                                <div className="flex space-x-4">
+                                <div className="flex space-x-4 mt-auto">
                                     <a
                                         href={project.liveUrl}
                                         target="_blank"
