@@ -87,8 +87,8 @@ const Projects = () => {
                 "github",
                 "vscode",
             ],
-            liveUrl: "https://example.com",
-            githubUrl: "https://github.com/yourusername/project",
+            liveUrl: "https://weathery-pi.vercel.app/",
+            githubUrl: "https://github.com/Nodica28/Weathery",
         },
         {
             title: "SAUP Portal HAU",
