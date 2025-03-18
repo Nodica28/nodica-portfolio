@@ -20,15 +20,15 @@ const Footer = () => {
                     </div>
 
                     {/* Column 2 - Quick Links */}
-                    <div>
+                    <div className="col-span-2">
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                             Quick Links
                         </h3>
-                        <ul className="space-y-2">
+                        <ul className="space-y-2 flex gap-4">
                             <li>
                                 <Link
                                     href="/#works"
-                                    className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                                    className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-[var(--secondary)] transition-all duration-300"
                                 >
                                     Works
                                 </Link>
@@ -36,7 +36,7 @@ const Footer = () => {
                             <li>
                                 <Link
                                     href="/#techstack"
-                                    className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                                    className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-[var(--secondary)] transition-all duration-300"
                                 >
                                     Tech Stack
                                 </Link>
@@ -44,7 +44,7 @@ const Footer = () => {
                             <li>
                                 <Link
                                     href="/#about"
-                                    className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                                    className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-[var(--secondary)] transition-all duration-300"
                                 >
                                     About
                                 </Link>
@@ -53,7 +53,7 @@ const Footer = () => {
                             <li>
                                 <Link
                                     href="/#contact"
-                                    className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                                    className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-[var(--secondary)] transition-all duration-300"
                                 >
                                     Contact
                                 </Link>
@@ -62,7 +62,7 @@ const Footer = () => {
                     </div>
 
                     {/* Column 3 - Social Links */}
-                    <div>
+                    {/* <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                             Connect
                         </h3>
@@ -104,7 +104,7 @@ const Footer = () => {
                                 </svg>
                             </a>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Copyright */}

@@ -19,7 +19,7 @@ const Navbar = () => {
                     <div className="flex items-center">
                         <Link
                             href="/"
-                            className=" flex gap-1 text-xl font-bold text-gray-900 dark:text-white hover:text-[var(--primary)] dark:hover:text-[var(--secondary)]"
+                            className=" flex gap-1 text-xl font-bold text-gray-900 dark:text-white hover:text-[var(--primary)] dark:hover:text-[var(--secondary)] transition-all duration-300"
                         >
                             <Image
                                 src={nodicaIcon}
@@ -35,44 +35,47 @@ const Navbar = () => {
                     <div className="hidden md:flex items-center space-x-8">
                         <Link
                             href="/#works"
-                            className="text-gray-600 dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-[var(--secondary)]"
+                            className="text-gray-600 dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-[var(--secondary)] transition-all duration-300"
                         >
                             Works
                         </Link>
                         <Link
                             href="/#techstack"
-                            className="text-gray-600 dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-[var(--secondary)]"
+                            className="text-gray-600 dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-[var(--secondary)] transition-all duration-300"
                         >
                             Tech Stack
                         </Link>
                         <Link
                             href="/#about"
-                            className="text-gray-600 dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-[var(--secondary)]"
+                            className="text-gray-600 dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-[var(--secondary)] transition-all duration-300"
                         >
                             About
                         </Link>
                         <Link
                             href="/#contact"
-                            className="text-gray-600 dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-[var(--secondary)]"
+                            className="text-gray-600 dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-[var(--secondary)] transition-all duration-300"
                         >
                             Contact
                         </Link>
                     </div>
 
-                    <div className="flex items-center">
-                        <Link
-                            href="/"
-                            className="text-[var(--primary)] font-bold dark:text-[var(--primary)] py-3 px-8 border border-[var(--primary)] rounded-lg transition hover:bg-gray-100 dark:hover:bg-[var(--primary)] hover:text-[var(--primary)] dark:hover:text-white hover:transition-all"
+                    <div className="hidden md:flex items-center">
+                        <a
+                            href="/pdf/Nicdao-Justine_Resume.pdf"
+                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[var(--primary)] font-bold dark:text-[var(--primary)] py-3 px-8 border border-[var(--primary)] rounded-lg transition hover:bg-gray-100 dark:hover:bg-[var(--primary)] hover:text-[var(--primary)] dark:hover:text-white hover:transition-all duration-300"
                         >
                             Resume
-                        </Link>
+                        </a>
                     </div>
 
                     {/* Mobile menu button */}
                     <div className="md:hidden flex items-center">
                         <button
                             onClick={toggleMenu}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none"
+                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none transition"
                             aria-expanded="false"
                         >
                             <span className="sr-only">Open main menu</span>
@@ -115,40 +118,53 @@ const Navbar = () => {
             </div>
 
             {/* Mobile menu, show/hide based on menu state */}
-            {isMenuOpen && (
-                <div className="md:hidden">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900">
-                        <Link
-                            href="/#about"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            About
-                        </Link>
-                        <Link
-                            href="/#skills"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Skills
-                        </Link>
-                        <Link
-                            href="/#projects"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Projects
-                        </Link>
-                        <Link
-                            href="/#contact"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Contact
-                        </Link>
-                    </div>
+            <div
+                className={`md:hidden transition-all duration-300 ease-linear ${
+                    isMenuOpen
+                        ? "max-h-screen opacity-100"
+                        : "max-h-0 opacity-0 overflow-hidden"
+                }`}
+            >
+                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 text-center">
+                    <Link
+                        href="/#works"
+                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        Works
+                    </Link>
+                    <Link
+                        href="/#techstack"
+                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        Tech Stack
+                    </Link>
+                    <Link
+                        href="/#about"
+                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        About
+                    </Link>
+                    <Link
+                        href="/#contact"
+                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        Contact
+                    </Link>
+                    <a
+                        href="/pdf/Nicdao-Justine_Resume.pdf"
+                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-[var(--primary)] font-bold dark:text-[var(--primary)] mt-2 py-3 px-8 border border-[var(--primary)] rounded-lg transition hover:bg-gray-100 dark:hover:bg-[var(--primary)] hover:text-[var(--primary)] dark:hover:text-white hover:transition-all"
+                    >
+                        Resume
+                    </a>
                 </div>
-            )}
+            </div>
         </nav>
     );
 };
