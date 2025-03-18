@@ -47,6 +47,7 @@ import { BsPcDisplay } from "react-icons/bs";
 import { TbCloudCog } from "react-icons/tb";
 import { DiHeroku } from "react-icons/di";
 import { CursorIcon } from "./cursorIcon";
+import { CursorIconWhite } from "./cursorIconWhite";
 
 // Create a mapping for icons
 export const iconMap = {
@@ -57,6 +58,7 @@ export const iconMap = {
     code: RiCodeSSlashFill,
     css: SiCss3,
     cursor: CursorIcon,
+    cursorwhite: CursorIconWhite,
     curly: BiCodeCurly,
     docker: SiDocker,
     elementor: SiElementor,

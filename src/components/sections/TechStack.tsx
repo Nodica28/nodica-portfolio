@@ -163,7 +163,7 @@ const TechStack = () => {
                 },
                 {
                     name: "Cursor",
-                    icon: "cursor",
+                    icon: "cursorwhite",
                 },
                 {
                     name: "Jira",
