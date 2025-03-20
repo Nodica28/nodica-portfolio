@@ -65,7 +65,7 @@ const Navbar = () => {
                             download
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[var(--primary)] font-bold dark:text-[var(--primary)] py-3 px-8 border border-[var(--primary)] rounded-lg transition hover:bg-gray-100 dark:hover:bg-[var(--primary)] hover:text-[var(--primary)] dark:hover:text-white hover:transition-all duration-300"
+                            className="text-white font-bold py-3 px-8 bg-[var(--primary)] rounded-lg transition hover:bg-gray-100 dark:hover:bg-[var(--tertiary)] hover:transition-all duration-300"
                         >
                             Resume
                         </a>
