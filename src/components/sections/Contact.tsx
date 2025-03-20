@@ -90,10 +90,10 @@ const Contact = () => {
                                             Email
                                         </p>
                                         <a
-                                            href="mailto:nodica.dev@gmail.com"
+                                            href="mailto:justine.anicdao@gmail.com"
                                             className="text-gray-600 dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-[var(--secondary)]"
                                         >
-                                            nodica.dev@gmail.com
+                                            justine.anicdao@gmail.com
                                         </a>
                                     </div>
                                 </div>
