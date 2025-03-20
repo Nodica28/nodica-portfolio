@@ -98,7 +98,7 @@ const Projects = () => {
         {
             title: "UI/UX Designer Portfolio",
             description:
-                "A portfolio website for a UI/UX designer showcasing their work, skills, and design philosophy. The site includes case studies, client testimonials, and a projects section where the designer showcases their expertise in UI/UX design. It also features an interactive contact form for potential clients to get in touch.",
+                "A portfolio website for a UI/UX designer showcasing their work, skills, UI and social media graphic designs. The site includes a projects section where the designer showcases their expertise in UI/UX design. The portfolio consists of a single page that is responsive with a minimalistic and modern design.",
             image: designerImage,
             tags: ["Portfolio", "UI/UX", "Single Page", "Responsive"],
             icon: [
