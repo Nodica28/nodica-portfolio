@@ -37,7 +37,7 @@ const About = () => {
                         <div className="flex justify-between mb-20 max-w-md">
                             <div className="text-center">
                                 <p className="text-xl font-bold text-[var(--primary)] dark:text-[var(--secondary)]">
-                                    03+
+                                    04+
                                 </p>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">
                                     Years
@@ -47,7 +47,7 @@ const About = () => {
                             </div>
                             <div className="text-center">
                                 <p className="text-xl font-bold text-[var(--primary)] dark:text-[var(--secondary)]">
-                                    12+
+                                    20+
                                 </p>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">
                                     Projects

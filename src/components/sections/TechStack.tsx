@@ -22,7 +22,7 @@ const TechStack = () => {
         {
             id: "frontend",
             title: "Frontend",
-            years: "More than 2 years",
+            years: "More than 3 years",
             icon: "curly",
             skills: [
                 {
@@ -50,12 +50,12 @@ const TechStack = () => {
                     icon: "mui",
                 },
                 {
-                    name: "ShadcnUI",
+                    name: "Shadcn UI",
                     icon: "shadcn",
                 },
                 {
-                    name: "Java",
-                    icon: "java",
+                    name: "Radix UI",
+                    icon: "radix",
                 },
                 {
                     name: "JavaScript",
@@ -93,12 +93,16 @@ const TechStack = () => {
                     name: "Webflow",
                     icon: "webflow",
                 },
+                {
+                    name: "React Query",
+                    icon: "reactquery",
+                },
             ],
         },
         {
             id: "backend",
             title: "Backend",
-            years: "More than 2 years",
+            years: "More than 3 years",
             icon: "code",
             skills: [
                 {
@@ -116,6 +120,14 @@ const TechStack = () => {
                 {
                     name: "MongoDB",
                     icon: "mongodb",
+                },
+                {
+                    name: "PostgreSQL",
+                    icon: "postgresql",
+                },
+                {
+                    name: "Drizzle ORM",
+                    icon: "drizzle",
                 },
                 {
                     name: "Python",
@@ -149,12 +161,20 @@ const TechStack = () => {
                     name: "Supabase",
                     icon: "supabase",
                 },
+                {
+                    name: "Passport",
+                    icon: "passport",
+                },
+                {
+                    name: "Zod",
+                    icon: "zod",
+                },
             ],
         },
         {
             id: "others",
-            title: "Others",
-            years: "More than 3 years",
+            title: "Tools & Services",
+            years: "More than 4 years",
             icon: "pc",
             skills: [
                 {
@@ -164,6 +184,18 @@ const TechStack = () => {
                 {
                     name: "Cursor",
                     icon: "cursorwhite",
+                },
+                {
+                    name: "Stripe",
+                    icon: "stripe",
+                },
+                {
+                    name: "SendGrid",
+                    icon: "sendgrid",
+                },
+                {
+                    name: "Sentry",
+                    icon: "sentry",
                 },
                 {
                     name: "Jira",
@@ -203,7 +235,7 @@ const TechStack = () => {
                 },
                 {
                     name: "Vite",
-                    icon: "vites",
+                    icon: "vite",
                 },
                 {
                     name: "Vercel",
@@ -216,6 +248,10 @@ const TechStack = () => {
                 {
                     name: "Heroku",
                     icon: "heroku",
+                },
+                {
+                    name: "Jest",
+                    icon: "jest",
                 },
                 {
                     name: "Adobe Premiere Pro",

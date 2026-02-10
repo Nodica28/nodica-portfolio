@@ -3,10 +3,49 @@ import saupImage from "@/app/assets/images/saup.png";
 import iconadImage from "@/app/assets/images/iconad.png";
 import designerImage from "@/app/assets/images/escotoaizel.png";
 import weatheryImage from "@/app/assets/images/weathery.png";
+import badgeImage from "@/app/assets/images/badge.png";
 import { iconMap } from "@/app/assets/iconExporter";
 
 const Projects = () => {
     const projects = [
+        {
+            title: "Badge",
+            description:
+                "Your entire sales toolkit in one shareable profile. Badge creates AI-powered digital profiles that capture leads instantly and track engagement in real-time. Turn every interaction into a sales opportunity with customizable profiles (e.g. withbadge.ai/yourname), QR codes for connecting, lead notifications, and real-time analytics on profile views and prospect activity.",
+            image: badgeImage,
+            tags: [
+                "Sales",
+                "CRM",
+                "Lead Generation",
+                "AI",
+                "Digital Profile",
+                "Analytics",
+            ],
+            icon: [
+                "react",
+                "typescript",
+                "vite",
+                "tailwind",
+                "shadcn",
+                "node",
+                "express",
+                "postgresql",
+                "drizzle",
+                "openai",
+                "cursor",
+                "stripe",
+                "reactquery",
+                "sentry",
+                "zod",
+                "prettier",
+                "eslint",
+                "git",
+                "github",
+                "vscode",
+            ],
+            liveUrl: "https://withbadge.ai",
+            githubUrl: "#",
+        },
         {
             title: "Iconad Learning with AI",
             description:
@@ -195,14 +234,17 @@ const Projects = () => {
                                     >
                                         Live Demo
                                     </a>
-                                    <a
-                                        href={project.githubUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="px-4 py-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-medium rounded-lg transition-colors duration-300 text-sm"
-                                    >
-                                        GitHub
-                                    </a>
+                                    {project.githubUrl &&
+                                        project.githubUrl !== "#" && (
+                                            <a
+                                                href={project.githubUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="px-4 py-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-medium rounded-lg transition-colors duration-300 text-sm"
+                                            >
+                                                GitHub
+                                            </a>
+                                        )}
                                 </div>
                             </div>
                         </div>
