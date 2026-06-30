@@ -4,10 +4,82 @@ import iconadImage from "@/app/assets/images/iconad.png";
 import designerImage from "@/app/assets/images/escotoaizel.png";
 import weatheryImage from "@/app/assets/images/weathery.png";
 import badgeImage from "@/app/assets/images/badge.png";
+import trulyhomeImage from "@/app/assets/images/trulyhome.png";
+import zaptimeImage from "@/app/assets/images/zaptime.png";
 import { iconMap } from "@/app/assets/iconExporter";
 
 const Projects = () => {
     const projects = [
+        {
+            title: "TrulyHome",
+            description:
+                "An end-to-end operations and customer-experience platform for custom kitchen and cabinet installations. TrulyHome tracks every order from quote to final delivery through a seven-stage production pipeline, with role-based dashboards for customers, installation ProPartners, the internal team, and the Elyon production facility. It combines real-time milestone photos and threaded messaging, ODFL freight tracking with electronic bill-of-lading generation, damage reporting, and an AI assistant — delivered as both a Next.js web app and native iOS/Android apps via Capacitor.",
+            image: trulyhomeImage,
+            tags: [
+                "SaaS",
+                "Operations",
+                "Logistics",
+                "Real-time",
+                "Mobile",
+                "AI",
+            ],
+            icon: [
+                "next",
+                "react",
+                "typescript",
+                "tailwind",
+                "shadcn",
+                "supabase",
+                "postgresql",
+                "reactquery",
+                "zod",
+                "openai",
+                "capacitor",
+                "resend",
+                "aws",
+                "cloudflare",
+                "sentry",
+                "docker",
+                "vercel",
+                "prettier",
+                "eslint",
+                "git",
+                "vscode",
+            ],
+            liveUrl: "https://trulyhome-staging.vercel.app",
+            githubUrl: "#",
+        },
+        {
+            title: "Zaptime",
+            description:
+                "A cross-device time-tracking and productivity desktop app for Windows, built with Electron. Zaptime automatically captures activity across your applications through an embedded ActivityWatch engine, then syncs it to the cloud via Supabase with real-time WebSocket updates and offline support. Its AI chatbot analyzes productivity patterns and auto-categorizes activity into work, communication, social media, gaming, and personal buckets, with secure GitHub OAuth sign-in and editable categorization rules.",
+            image: zaptimeImage,
+            tags: [
+                "Desktop App",
+                "Time Tracking",
+                "Productivity",
+                "AI",
+                "Cross-Device",
+            ],
+            icon: [
+                "electron",
+                "javascript",
+                "tailwind",
+                "supabase",
+                "postgresql",
+                "firebase",
+                "openai",
+                "cloudflare",
+                "node",
+                "git",
+                "github",
+                "eslint",
+                "prettier",
+                "vscode",
+            ],
+            liveUrl: "#",
+            githubUrl: "#",
+        },
         {
             title: "Badge",
             description:
@@ -117,7 +189,7 @@ const Projects = () => {
             image: weatheryImage,
             tags: ["Weather", "API", "Tracking", "Forecast"],
             icon: [
-                "nextjs",
+                "next",
                 "shadcn",
                 "tailwind",
                 "css",
@@ -226,14 +298,17 @@ const Projects = () => {
                                 </p>
 
                                 <div className="flex space-x-4 mt-auto">
-                                    <a
-                                        href={project.liveUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="px-4 py-2 bg-[var(--primary)] hover:bg-[var(--secondary)] text-white font-medium rounded-lg transition-colors duration-300 text-sm"
-                                    >
-                                        Live Demo
-                                    </a>
+                                    {project.liveUrl &&
+                                        project.liveUrl !== "#" && (
+                                            <a
+                                                href={project.liveUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="px-4 py-2 bg-[var(--primary)] hover:bg-[var(--secondary)] text-white font-medium rounded-lg transition-colors duration-300 text-sm"
+                                            >
+                                                Live Demo
+                                            </a>
+                                        )}
                                     {project.githubUrl &&
                                         project.githubUrl !== "#" && (
                                             <a

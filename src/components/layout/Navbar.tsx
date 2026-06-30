@@ -3,14 +3,21 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import nodicaIcon from "@/app/assets/images/nodica_icon.png";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
+    // Hide global chrome on the standalone, print-optimized résumé page.
+    if (pathname === "/resume") {
+        return null;
+    }
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
@@ -60,15 +67,12 @@ const Navbar = () => {
                     </div>
 
                     <div className="hidden md:flex items-center">
-                        <a
-                            href="/pdf/Nicdao-Justine_Resume.pdf"
-                            download
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <Link
+                            href="/resume"
                             className="text-white font-bold py-3 px-8 bg-[var(--primary)] rounded-lg transition hover:bg-gray-100 dark:hover:bg-[var(--tertiary)] hover:transition-all duration-300"
                         >
                             Resume
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Mobile menu button */}
@@ -154,15 +158,13 @@ const Navbar = () => {
                     >
                         Contact
                     </Link>
-                    <a
-                        href="/pdf/Nicdao-Justine_Resume.pdf"
-                        download
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <Link
+                        href="/resume"
+                        onClick={() => setIsMenuOpen(false)}
                         className="block text-[var(--primary)] font-bold dark:text-[var(--primary)] mt-2 py-3 px-8 border border-[var(--primary)] rounded-lg transition hover:bg-gray-100 dark:hover:bg-[var(--primary)] hover:text-[var(--primary)] dark:hover:text-white hover:transition-all"
                     >
                         Resume
-                    </a>
+                    </Link>
                 </div>
             </div>
         </nav>

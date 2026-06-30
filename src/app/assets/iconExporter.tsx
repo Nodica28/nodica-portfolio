@@ -48,6 +48,10 @@ import {
     SiPassport,
     SiSendgrid,
     SiRadixui,
+    SiCapacitor,
+    SiElectron,
+    SiFirebase,
+    SiResend,
 } from "react-icons/si";
 import { TbBrandVscode } from "react-icons/tb";
 import { BiGitBranch, BiCodeCurly } from "react-icons/bi";
@@ -63,6 +67,7 @@ export const iconMap = {
     aftereffects: SiAdobeaftereffects,
     aws: FaAws,
     axios: SiAxios,
+    capacitor: SiCapacitor,
     cloudflare: SiCloudflare,
     code: RiCodeSSlashFill,
     css: SiCss3,
@@ -70,9 +75,11 @@ export const iconMap = {
     cursorwhite: CursorIconWhite,
     curly: BiCodeCurly,
     docker: SiDocker,
+    electron: SiElectron,
     elementor: SiElementor,
     eslint: SiEslint,
     express: SiExpress,
+    firebase: SiFirebase,
     git: SiGit,
     github: SiGithub,
     gitlab: FaGitlab,
@@ -105,6 +112,7 @@ export const iconMap = {
     passport: SiPassport,
     react: SiReact,
     radix: SiRadixui,
+    resend: SiResend,
     restapi: TbCloudCog,
     sendgrid: SiSendgrid,
     shadcn: SiShadcnui,

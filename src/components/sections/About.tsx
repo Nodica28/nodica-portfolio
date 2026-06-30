@@ -1,6 +1,3 @@
-import Image from "next/image";
-import aboutImage from "@/app/assets/images/about_image.png";
-
 const About = () => {
     return (
         <section id="about" className="py-20 bg-white dark:bg-gray-900">
@@ -12,12 +9,8 @@ const About = () => {
                     <div className="w-20 h-1 bg-[var(--primary)] mx-auto"></div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Text Column */}
+                <div className="max-w-3xl mx-auto">
                     <div>
-                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-                            Web Developer & Designer
-                        </h3>
                         <p className="text-gray-600 dark:text-gray-300 mb-6">
                             Hello, I&apos;m Justine, a Full-Stack Software
                             Engineer specializing in the <strong>MERN</strong>{" "}
@@ -33,43 +26,9 @@ const About = () => {
                             and ease of use.
                         </p>
 
-                        {/* Experience Metrics */}
-                        <div className="flex justify-between mb-20 max-w-md">
-                            <div className="text-center">
-                                <p className="text-xl font-bold text-[var(--primary)] dark:text-[var(--secondary)]">
-                                    04+
-                                </p>
-                                <p className="text-sm text-gray-600 dark:text-gray-400">
-                                    Years
-                                    <br />
-                                    work experience
-                                </p>
-                            </div>
-                            <div className="text-center">
-                                <p className="text-xl font-bold text-[var(--primary)] dark:text-[var(--secondary)]">
-                                    20+
-                                </p>
-                                <p className="text-sm text-gray-600 dark:text-gray-400">
-                                    Projects
-                                    <br />
-                                    completed
-                                </p>
-                            </div>
-                            <div className="text-center">
-                                <p className="text-xl font-bold text-[var(--primary)] dark:text-[var(--secondary)]">
-                                    07+
-                                </p>
-                                <p className="text-sm text-gray-600 dark:text-gray-400">
-                                    Web
-                                    <br />
-                                    frameworks
-                                </p>
-                            </div>
-                        </div>
-
                         {/* CTA Button */}
                         <a
-                            href="/pdf/Nicdao-Justine_Resume.pdf"
+                            href="/pdf/Nicdao-Justine_Resume-Professional.pdf"
                             download
                             target="_blank"
                             rel="noopener noreferrer"
@@ -91,18 +50,6 @@ const About = () => {
                                 ></path>
                             </svg>
                         </a>
-                    </div>
-
-                    {/* Image Column */}
-                    <div className="flex justify-center lg:justify-start">
-                        <div className="relative w-full max-w-md h-80 sm:h-96 overflow-hidden">
-                            <Image
-                                src={aboutImage}
-                                alt="About Me"
-                                fill
-                                style={{ objectFit: "contain" }}
-                            />
-                        </div>
                     </div>
                 </div>
             </div>

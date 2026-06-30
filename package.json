@@ -6,7 +6,9 @@
         "dev": "next dev --turbopack",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "resume:pdf": "node scripts/generate-resume-pdf.mjs",
+        "resume:docx": "node scripts/generate-resume-docx.mjs"
     },
     "dependencies": {
         "autoprefixer": "^10.4.21",
@@ -23,8 +25,10 @@
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
+        "docx": "^9.7.1",
         "eslint": "^9",
         "eslint-config-next": "15.2.8",
+        "puppeteer": "^24.43.1",
         "tailwindcss": "^4.0.14",
         "typescript": "^5"
     }
