@@ -1,81 +1,73 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const links = [
+    { href: "/#works", label: "Work" },
+    { href: "/#techstack", label: "Stack" },
+    { href: "/#about", label: "About" },
+    { href: "/#contact", label: "Contact" },
+];
 
 const Footer = () => {
+    const pathname = usePathname();
     const currentYear = new Date().getFullYear();
 
+    // Hide global chrome on the standalone, print-optimized résumé page.
+    if (pathname === "/resume") {
+        return null;
+    }
+
     return (
-        <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-            <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* Column 1 - About */}
-                    <div>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                            About
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-300 mb-4">
-                            A passionate web developer creating modern,
-                            responsive, and user-friendly websites and
-                            applications.
+        <footer
+            className="border-t"
+            style={{
+                background: "var(--surface)",
+                borderColor: "var(--border)",
+            }}
+        >
+            <div className="mx-auto max-w-6xl px-6 py-14 lg:px-8">
+                <div className="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
+                    <div className="max-w-sm">
+                        <p
+                            className="text-lg font-semibold tracking-tight"
+                            style={{ color: "var(--text)" }}
+                        >
+                            Justine Nicdao
+                        </p>
+                        <p
+                            className="mt-2 text-sm leading-relaxed"
+                            style={{ color: "var(--muted)" }}
+                        >
+                            Full-stack software engineer building secure,
+                            production-ready products from first commit to
+                            deploy.
                         </p>
                     </div>
 
-                    {/* Column 2 - Quick Links */}
-                    <div className="col-span-2">
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                            Quick Links
-                        </h3>
-                        <ul className="space-y-2 flex gap-4">
-                            <li>
+                    <div className="flex flex-col gap-6 sm:items-end">
+                        <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+                            {links.map((link) => (
                                 <Link
-                                    href="/#works"
-                                    className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-[var(--secondary)] transition-all duration-300"
+                                    key={link.href}
+                                    href={link.href}
+                                    className="text-[var(--muted)] transition-colors duration-300 hover:text-[var(--accent)]"
                                 >
-                                    Works
+                                    {link.label}
                                 </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/#techstack"
-                                    className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-[var(--secondary)] transition-all duration-300"
-                                >
-                                    Tech Stack
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/#about"
-                                    className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-[var(--secondary)] transition-all duration-300"
-                                >
-                                    About
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link
-                                    href="/#contact"
-                                    className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-[var(--secondary)] transition-all duration-300"
-                                >
-                                    Contact
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Column 3 - Social Links */}
-                    {/* <div>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                            Connect
-                        </h3>
-                        <div className="flex space-x-4">
+                            ))}
+                        </nav>
+                        <div className="flex gap-3">
                             <a
-                                href="https://github.com/nodica28"
+                                href="https://github.com/Nodica28"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                                aria-label="GitHub"
+                                className="text-[var(--muted)] transition-colors duration-300 hover:text-[var(--accent)]"
                             >
-                                <span className="sr-only">GitHub</span>
                                 <svg
-                                    className="h-6 w-6"
+                                    className="h-5 w-5"
                                     fill="currentColor"
                                     viewBox="0 0 24 24"
                                     aria-hidden="true"
@@ -91,11 +83,11 @@ const Footer = () => {
                                 href="https://www.linkedin.com/in/justine-nicdao/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                                aria-label="LinkedIn"
+                                className="text-[var(--muted)] transition-colors duration-300 hover:text-[var(--accent)]"
                             >
-                                <span className="sr-only">LinkedIn</span>
                                 <svg
-                                    className="h-6 w-6"
+                                    className="h-5 w-5"
                                     fill="currentColor"
                                     viewBox="0 0 24 24"
                                     aria-hidden="true"
@@ -104,14 +96,18 @@ const Footer = () => {
                                 </svg>
                             </a>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
 
-                {/* Copyright */}
-                <div className="mt-12 border-t border-gray-200 dark:border-gray-700 pt-8">
-                    <p className="text-center text-gray-500 dark:text-gray-400">
-                        © {currentYear} Nodica. All rights reserved.
-                    </p>
+                <div
+                    className="mt-12 flex flex-col gap-2 border-t pt-6 text-sm sm:flex-row sm:items-center sm:justify-between"
+                    style={{
+                        borderColor: "var(--border)",
+                        color: "var(--muted)",
+                    }}
+                >
+                    <p>© {currentYear} Justine Nicdao. All rights reserved.</p>
+                    <p>Built with Next.js &amp; Tailwind CSS.</p>
                 </div>
             </div>
         </footer>

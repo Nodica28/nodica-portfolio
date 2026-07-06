@@ -1,153 +1,100 @@
-"use client";
 import Link from "next/link";
-import { useState, useEffect, useCallback } from "react";
-import Script from "next/script";
+import VantaBackground from "./VantaBackground";
 
 const Hero = () => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const roles = [
-        "Full-Stack Software Engineer",
-        "Reactjs Developer",
-        "Nextjs Developer",
-        "AI Engineer",
-        "CMS Architect",
-        "Webflow Specialist",
-        "WordPress Elementor Expert",
-    ];
-
-    const [currentRole, setCurrentRole] = useState("");
-    const [isDeleting, setIsDeleting] = useState(false);
-    const [roleIndex, setRoleIndex] = useState(0);
-    const [delta, setDelta] = useState(200);
-
-    const typingSpeed = 75;
-    const deletingSpeed = 50;
-    const pauseTime = 1500;
-
-    const tick = useCallback(() => {
-        const fullRole = roles[roleIndex];
-
-        if (isDeleting) {
-            // Deleting text
-            setCurrentRole((prevRole) =>
-                fullRole.substring(0, prevRole.length - 1)
-            );
-            setDelta(deletingSpeed);
-        } else {
-            // Typing text
-            setCurrentRole((prevRole) =>
-                fullRole.substring(0, prevRole.length + 1)
-            );
-            setDelta(typingSpeed);
-        }
-
-        // If completed typing the full role
-        if (!isDeleting && currentRole === fullRole) {
-            setIsDeleting(true);
-            setDelta(pauseTime); // Pause before deleting
-        }
-        // If deleted the entire role
-        else if (isDeleting && currentRole === "") {
-            setIsDeleting(false);
-            setRoleIndex((prevIndex) => (prevIndex + 1) % roles.length); // Move to next role
-            setDelta(typingSpeed);
-        }
-    }, [
-        currentRole,
-        isDeleting,
-        roleIndex,
-        roles,
-        typingSpeed,
-        deletingSpeed,
-        pauseTime,
-    ]);
-
-    useEffect(() => {
-        const ticker = setTimeout(() => {
-            tick();
-        }, delta);
-
-        return () => clearTimeout(ticker);
-    }, [tick, delta]);
-
     return (
-        <>
-            <section
-                id="homepage-background"
-                className="relative py-20 sm:py-16"
-            >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-[116px]">
-                    <div className="gap-12 items-center">
-                        {/* Text Content */}
-                        <div className="text-center lg:text-center">
-                            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-                                <span className="block">
-                                    I don&apos;t just code, <br />I{" "}
-                                    <span className="text-[var(--secondary)]">
-                                        &lt;commit&gt;
-                                    </span>{" "}
-                                    as a
-                                </span>
-                                <span className="block mt-[61px] text-4xl text-[var(--secondary)] dark:text-[var(--secondary)]">
-                                    {currentRole}
-                                    <span className="animate-blink">|</span>
-                                </span>
-                            </h1>
-                        </div>
-                    </div>
-                </div>
+        <section
+            id="home"
+            className="relative overflow-hidden border-b border-[var(--border)]"
+            style={{ backgroundColor: "#0b0e17" }}
+        >
+            <VantaBackground />
 
-                {/* Scroll Down Indicator */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block">
+            <div className="relative z-10 mx-auto flex min-h-[82vh] max-w-6xl flex-col justify-center px-6 py-24 lg:px-8">
+                <p
+                    className="eyebrow reveal"
+                    style={{ animationDelay: "60ms", color: "#9aa3b8" }}
+                >
+                    Justine Nicdao — Full-stack software engineer
+                </p>
+
+                <h1
+                    className="display reveal mt-7 max-w-4xl text-balance"
+                    style={{
+                        animationDelay: "140ms",
+                        fontSize: "clamp(2.5rem, 6vw, 4.75rem)",
+                        lineHeight: 1.04,
+                        color: "#f4f6f9",
+                    }}
+                >
+                    I design, build, and ship —{" "}
+                    <span style={{ color: "#9db2fb" }}>
+                        end&nbsp;to&nbsp;end.
+                    </span>
+                </h1>
+
+                <p
+                    className="reveal mt-7 max-w-xl text-lg leading-relaxed"
+                    style={{ color: "#c3c7d1", animationDelay: "220ms" }}
+                >
+                    From polished Next.js interfaces to Supabase &amp; Postgres
+                    back-ends and practical AI features — I take web and mobile
+                    products from first commit to production.
+                </p>
+
+                <div
+                    className="reveal mt-10 flex flex-wrap items-center gap-3"
+                    style={{ animationDelay: "300ms" }}
+                >
                     <Link
                         href="/#works"
-                        className="flex flex-col items-center text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors duration-300"
+                        className="group inline-flex items-center gap-2 rounded-lg bg-[#3a5cd6] px-6 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-[#4a6ae0]"
                     >
-                        <span className="text-sm mb-2">See my works</span>
+                        View work
                         <svg
-                            className="w-6 h-6 animate-bounce hover:text-gray-700 dark:hover:text-gray-200 transition-colors duration-100"
+                            className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
+                            viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            aria-hidden="true"
                         >
-                            <path
-                                d="M7.29377 12.7063C7.6844 13.0969 8.31877 13.0969 8.7094 12.7063L14.7094 6.70627C15.1 6.31565 15.1 5.68127 14.7094 5.29065C14.3188 4.90002 13.6844 4.90002 13.2938 5.29065L8.00002 10.5844L2.70627 5.29377C2.31565 4.90315 1.68127 4.90315 1.29065 5.29377C0.900024 5.6844 0.900024 6.31877 1.29065 6.7094L7.29065 12.7094L7.29377 12.7063Z"
-                                fill="#F7F7F7"
-                            />
+                            <path d="M5 12h14M13 6l6 6-6 6" />
                         </svg>
                     </Link>
+                    <Link
+                        href="/resume"
+                        className="inline-flex items-center rounded-lg border border-white/25 px-6 py-3 text-sm font-medium text-white/90 transition-colors duration-300 hover:bg-white/10"
+                    >
+                        Résumé
+                    </Link>
                 </div>
-            </section>
-            <Script
-                src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
-                strategy="beforeInteractive"
-            />
-            <Script
-                src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"
-                strategy="beforeInteractive"
-            />
-            <Script id="script">
-                {`VANTA.BIRDS({
-                el: "#homepage-background",
-                mouseControls: true,
-                touchControls: true,
-                gyroControls: false,
-                minHeight: 200.00,
-                minWidth: 200.00,
-                scale: 1.00,
-                scaleMobile: 1.00,
-                backgroundColor: 0x101828,
-                color1: 0xff8282,
-                birdSize: 0.90,
-                wingSpan: 40.00,
-                speedLimit: 3.00,
-                separation: 70.00,
-                cohesion: 100.00,
-                quantity: 3.00
-                });`}
-            </Script>
-        </>
+
+                <div
+                    className="reveal mt-12 flex items-center gap-2.5"
+                    style={{ animationDelay: "380ms" }}
+                >
+                    <span className="relative flex h-2 w-2" aria-hidden="true">
+                        <span
+                            className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
+                            style={{ background: "#8aa1f7" }}
+                        />
+                        <span
+                            className="relative inline-flex h-2 w-2 rounded-full"
+                            style={{ background: "#8aa1f7" }}
+                        />
+                    </span>
+                    <span
+                        className="eyebrow"
+                        style={{ letterSpacing: "0.14em", color: "#9aa3b8" }}
+                    >
+                        Open to senior &amp; freelance roles
+                    </span>
+                </div>
+            </div>
+        </section>
     );
 };
 
