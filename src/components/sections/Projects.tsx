@@ -11,7 +11,7 @@ const featured = [
         title: "TrulyHome",
         role: "Full-stack engineer · web + native mobile",
         blurb: "Custom kitchen and cabinet installs were coordinated across customers, installation partners, the internal team, and the production facility with no single source of truth. I built an end-to-end operations platform on Next.js and Supabase: a seven-stage production pipeline, role-based dashboards, real-time milestone photos and threaded messaging, ODFL freight tracking with electronic bill-of-lading, and damage reporting — shipped as a web app and native iOS/Android via Capacitor.",
-        impact: "One real-time, auditable view from quote to delivery for every stakeholder, replacing scattered calls and spreadsheets. [add metric — e.g. projects tracked / hours saved]",
+        impact: "One real-time, auditable view from quote to delivery for every stakeholder, replacing scattered calls and spreadsheets.",
         image: trulyhomeImage,
         tags: ["SaaS", "Operations", "Logistics", "Real-time", "Mobile", "AI"],
         icon: [
@@ -30,14 +30,14 @@ const featured = [
             "docker",
             "vercel",
         ],
-        liveUrl: "https://trulyhome-staging.vercel.app",
+        liveUrl: "https://www.trulyhomecabinets.app",
         githubUrl: "#",
     },
     {
         title: "Zaptime",
         role: "Full-stack · desktop (Electron)",
         blurb: "Knowledge workers had no easy, private way to see where their time actually goes across apps and devices — and raw activity logs are noise, not insight. I built a cross-device desktop app that captures activity through an embedded ActivityWatch engine, syncs via Supabase with real-time WebSocket updates and offline support, and adds an AI chatbot that auto-categorizes activity with editable rules and GitHub OAuth.",
-        impact: "Turns passive activity data into a clear, categorized picture of the day — synced securely across a user's devices. [add metric]",
+        impact: "Turns passive activity data into a clear, categorized picture of the day — synced securely across a user's devices.",
         image: zaptimeImage,
         tags: ["Desktop App", "Time Tracking", "Productivity", "AI", "Cross-Device"],
         icon: [
@@ -59,7 +59,7 @@ const featured = [
         title: "Badge",
         role: "Full-stack software engineer · Badge AI",
         blurb: "Sales reps juggle scattered tools to capture leads and prove engagement, losing prospects between the handshake and the follow-up. I architected and shipped the Badge profile experience in React and TypeScript — AI-powered digital profiles with QR connect, instant lead capture, and real-time analytics — backed by React Query / Zustand state, OAuth and magic-link auth, Stripe, and Drizzle migrations.",
-        impact: "A rep's entire sales toolkit in one shareable profile that captures leads instantly and tracks engagement live. [add metric]",
+        impact: "A rep's entire sales toolkit in one shareable profile that captures leads instantly and tracks engagement live.",
         image: badgeImage,
         tags: ["Sales", "CRM", "Lead Generation", "AI", "Analytics"],
         icon: [
@@ -84,7 +84,7 @@ const featured = [
         title: "Iconad Learning with AI",
         role: "Full-stack engineer",
         blurb: "Generic learning content ignores how each child actually learns, so engagement and outcomes suffer. I built an AI learning platform on Next.js, Node, and MongoDB that analyzes a child's traits, interests, and learning style to recommend tailored materials, with OpenAI-powered assistance woven through the experience.",
-        impact: "Personalizes each child's learning path instead of a one-size-fits-all curriculum. [add metric]",
+        impact: "Personalizes each child's learning path instead of a one-size-fits-all curriculum.",
         image: iconadImage,
         tags: ["AI", "Education", "Portal", "Full Stack", "Agent"],
         icon: [
