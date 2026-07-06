@@ -1,13 +1,20 @@
 import Link from "next/link";
+import VantaBackground from "./VantaBackground";
 
 const Hero = () => {
     return (
         <section
             id="home"
             className="relative overflow-hidden border-b border-[var(--border)]"
+            style={{ backgroundColor: "#0b0e17" }}
         >
-            <div className="mx-auto flex min-h-[82vh] max-w-6xl flex-col justify-center px-6 py-24 lg:px-8">
-                <p className="eyebrow reveal" style={{ animationDelay: "60ms" }}>
+            <VantaBackground />
+
+            <div className="relative z-10 mx-auto flex min-h-[82vh] max-w-6xl flex-col justify-center px-6 py-24 lg:px-8">
+                <p
+                    className="eyebrow reveal"
+                    style={{ animationDelay: "60ms", color: "#9aa3b8" }}
+                >
                     Justine Nicdao — Full-stack software engineer
                 </p>
 
@@ -17,17 +24,18 @@ const Hero = () => {
                         animationDelay: "140ms",
                         fontSize: "clamp(2.5rem, 6vw, 4.75rem)",
                         lineHeight: 1.04,
+                        color: "#f4f6f9",
                     }}
                 >
                     I design, build, and ship —{" "}
-                    <span style={{ color: "var(--accent)" }}>
+                    <span style={{ color: "#9db2fb" }}>
                         end&nbsp;to&nbsp;end.
                     </span>
                 </h1>
 
                 <p
                     className="reveal mt-7 max-w-xl text-lg leading-relaxed"
-                    style={{ color: "var(--muted)", animationDelay: "220ms" }}
+                    style={{ color: "#c3c7d1", animationDelay: "220ms" }}
                 >
                     From polished Next.js interfaces to Supabase &amp; Postgres
                     back-ends and practical AI features — I take web and mobile
@@ -40,7 +48,7 @@ const Hero = () => {
                 >
                     <Link
                         href="/#works"
-                        className="group inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 text-sm font-medium text-[var(--on-accent)] transition-colors duration-300 hover:bg-[var(--accent-hover)]"
+                        className="group inline-flex items-center gap-2 rounded-lg bg-[#3a5cd6] px-6 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-[#4a6ae0]"
                     >
                         View work
                         <svg
@@ -58,7 +66,7 @@ const Hero = () => {
                     </Link>
                     <Link
                         href="/resume"
-                        className="inline-flex items-center rounded-lg border border-[var(--border)] px-6 py-3 text-sm font-medium text-[var(--text)] transition-colors duration-300 hover:bg-[var(--surface)]"
+                        className="inline-flex items-center rounded-lg border border-white/25 px-6 py-3 text-sm font-medium text-white/90 transition-colors duration-300 hover:bg-white/10"
                     >
                         Résumé
                     </Link>
@@ -71,16 +79,16 @@ const Hero = () => {
                     <span className="relative flex h-2 w-2" aria-hidden="true">
                         <span
                             className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
-                            style={{ background: "var(--accent)" }}
+                            style={{ background: "#8aa1f7" }}
                         />
                         <span
                             className="relative inline-flex h-2 w-2 rounded-full"
-                            style={{ background: "var(--accent)" }}
+                            style={{ background: "#8aa1f7" }}
                         />
                     </span>
                     <span
                         className="eyebrow"
-                        style={{ letterSpacing: "0.14em" }}
+                        style={{ letterSpacing: "0.14em", color: "#9aa3b8" }}
                     >
                         Open to senior &amp; freelance roles
                     </span>

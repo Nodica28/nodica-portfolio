@@ -1,56 +1,100 @@
+import Reveal from "@/components/ui/Reveal";
+
 const About = () => {
     return (
-        <section id="about" className="py-20 bg-white dark:bg-gray-900">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                        About Me
-                    </h2>
-                    <div className="w-20 h-1 bg-[var(--primary)] mx-auto"></div>
-                </div>
+        <section
+            id="about"
+            className="py-24 sm:py-28"
+            style={{ background: "var(--bg)" }}
+        >
+            <div className="mx-auto max-w-6xl px-6 lg:px-8">
+                <div className="grid gap-10 lg:grid-cols-[280px_1fr] lg:gap-16">
+                    <Reveal>
+                        <p className="eyebrow">About</p>
+                        <h2
+                            className="display mt-3 text-4xl sm:text-5xl"
+                            style={{ color: "var(--text)" }}
+                        >
+                            Who I am
+                        </h2>
+                    </Reveal>
 
-                <div className="max-w-3xl mx-auto">
-                    <div>
-                        <p className="text-gray-600 dark:text-gray-300 mb-6">
+                    <Reveal delay={120}>
+                        <p
+                            className="text-lg leading-relaxed"
+                            style={{ color: "var(--muted)" }}
+                        >
                             Hello, I&apos;m Justine, a Full-Stack Software
-                            Engineer specializing in the <strong>MERN</strong>{" "}
-                            stack (MongoDB, ExpressJS, ReactJS, NodeJS). I build
-                            secure, user-friendly web applications with React,
-                            MaterialUI, and NodeJS.
+                            Engineer. I build on what I call the{" "}
+                            <strong style={{ color: "var(--text)" }}>
+                                SNAP
+                            </strong>{" "}
+                            stack —{" "}
+                            <strong style={{ color: "var(--text)" }}>
+                                Supabase
+                            </strong>
+                            ,{" "}
+                            <strong style={{ color: "var(--text)" }}>
+                                Next.js
+                            </strong>
+                            ,{" "}
+                            <strong style={{ color: "var(--text)" }}>
+                                App Router
+                            </strong>
+                            , and{" "}
+                            <strong style={{ color: "var(--text)" }}>
+                                Postgres
+                            </strong>{" "}
+                            — pairing Next.js server components and server
+                            actions with a Supabase back-end, and React,
+                            Tailwind, and shadcn/ui on the front end. I ship
+                            secure, accessible, production-ready applications end
+                            to end on Node.js.
                         </p>
-                        <p className="text-gray-600 dark:text-gray-300 mb-8">
-                            I also have expertise in <strong>Webflow</strong>{" "}
-                            and <strong>WordPress</strong> with{" "}
-                            <strong>Elementor</strong>, creating responsive and
-                            visually engaging websites designed for efficiency
-                            and ease of use.
+                        <p
+                            className="mt-5 text-lg leading-relaxed"
+                            style={{ color: "var(--muted)" }}
+                        >
+                            I also have expertise in{" "}
+                            <strong style={{ color: "var(--text)" }}>
+                                Webflow
+                            </strong>{" "}
+                            and{" "}
+                            <strong style={{ color: "var(--text)" }}>
+                                WordPress
+                            </strong>{" "}
+                            with{" "}
+                            <strong style={{ color: "var(--text)" }}>
+                                Elementor
+                            </strong>
+                            , creating responsive and visually engaging websites
+                            designed for efficiency and ease of use.
                         </p>
 
-                        {/* CTA Button */}
                         <a
                             href="/pdf/Nicdao-Justine_Resume-Professional.pdf"
                             download
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center px-6 py-3 bg-[var(--primary)] hover:bg-[var(--secondary)] text-white hover:text-[var(--primary)] font-medium rounded-lg transition-colors duration-300"
+                            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 text-sm font-medium text-[var(--on-accent)] transition-colors duration-300 hover:bg-[var(--accent-hover)]"
                         >
-                            Download Resume
+                            Download résumé
                             <svg
-                                className="w-5 h-5 ml-2"
+                                className="h-4 w-4"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
                             >
                                 <path
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
                                     strokeWidth="2"
                                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                                ></path>
+                                />
                             </svg>
                         </a>
-                    </div>
+                    </Reveal>
                 </div>
             </div>
         </section>

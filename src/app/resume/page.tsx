@@ -39,6 +39,26 @@ const EXPERIENCE: {
     bullets: string[];
 }[] = [
     {
+        role: "Full-Stack Developer",
+        company: "TrulyHome — Freelance / Client Build",
+        period: "May 2026 – June 2026 · 30-day build",
+        bullets: [
+            "Single-handedly designed, built, and shipped TrulyHome—a multi-role logistics and project-management platform—to production in a 30-day build, onboarding 13 staff accounts on launch day.",
+            "Architected a 5-role access model plus a public shipment-tracking surface on Next.js 16 (Server Components/Actions), React 19, and Supabase (Postgres 17, Realtime, RLS); hardened through two security red-team passes.",
+            "Shipped a 7-stage pipeline with damage-triggered reprocessing, live freight tracking (ODFL, FedEx), EBOL PDF generation, native mobile (Capacitor 8, iOS/Android), and Playwright E2E across 3 device profiles.",
+        ],
+    },
+    {
+        role: "Lead Developer",
+        company: "Zaptime",
+        period: "April 2026 – June 2026",
+        bullets: [
+            "Led development of Zaptime, a cross-device Electron time-tracking app with an AI assistant—authoring ~74% of the codebase (138 of 187 commits) and shipping 23 production Windows releases in ~2 months across a 6-person team.",
+            "Executed a zero-downtime Firebase → Supabase migration via a dual-backend abstraction with an identical IPC contract, enabling safe rollback while active users kept syncing.",
+            "Built a multi-provider AI assistant (OpenAI, OpenRouter, MiniMax) behind a table-driven abstraction with a deterministic activity-categorization engine, plus cross-device sync and a Node 18/20 GitHub Actions CI/CD pipeline (NSIS + Microsoft Store).",
+        ],
+    },
+    {
         role: "Full Stack Software Engineer",
         company: "Switch",
         period: "June 2025 – January 2026",
@@ -79,7 +99,6 @@ const EXPERIENCE: {
             "Developed responsive front-end applications with Next.js, React, and Tailwind CSS, transforming wireframes and design specifications into intuitive, user-friendly interfaces.",
             "Implemented AI technologies across multiple projects, delivering innovative solutions that enhanced product capabilities and improved user experience.",
             "Built robust backend systems using Supabase, and Infisical for secure environment management, creating scalable and maintainable application architecture.",
-            "Led continuous codebase improvements by resolving bugs, optimizing performance, and implementing modern development practices to ensure high-quality deliverables.",
         ],
     },
     {
@@ -113,7 +132,7 @@ const CERTIFICATIONS: { title: string; year: string }[] = [
 ];
 
 const SectionTitle = ({ children }: { children: string }) => (
-    <h2 className="mb-3 border-b border-[#1f3a5f]/25 pb-1 text-[12.5px] font-bold uppercase tracking-[0.18em] text-[#1f3a5f]">
+    <h2 className="mb-3 border-b border-[#2f54c8]/25 pb-1 text-[12.5px] font-bold uppercase tracking-[0.18em] text-[#2f54c8]">
         {children}
     </h2>
 );
@@ -126,7 +145,7 @@ const ResumePage = () => {
                 <a
                     href={PDF_PATH}
                     download
-                    className="inline-flex items-center gap-2 rounded-md bg-[#1f3a5f] px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#16293f]"
+                    className="inline-flex items-center gap-2 rounded-md bg-[#2f54c8] px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#233f9b]"
                 >
                     <svg
                         className="h-4 w-4"
@@ -151,7 +170,7 @@ const ResumePage = () => {
             <article className="resume-paper">
                 {/* Header */}
                 <header className="text-center">
-                    <h1 className="text-[28px] font-bold tracking-tight text-[#1f3a5f]">
+                    <h1 className="text-[28px] font-bold tracking-tight text-[#2f54c8]">
                         Justine A. Nicdao
                     </h1>
                     <p className="mt-1 text-[12px] font-semibold uppercase tracking-[0.25em] text-[#6b7280]">
@@ -166,7 +185,7 @@ const ResumePage = () => {
                                 {c.href ? (
                                     <a
                                         href={c.href}
-                                        className="transition-colors hover:text-[#1f3a5f]"
+                                        className="transition-colors hover:text-[#2f54c8]"
                                     >
                                         {c.label}
                                     </a>
@@ -178,7 +197,7 @@ const ResumePage = () => {
                     </div>
                 </header>
 
-                <div className="mt-4 border-b-2 border-[#1f3a5f]" />
+                <div className="mt-4 border-b-2 border-[#2f54c8]" />
 
                 {/* Technical Skills */}
                 <section className="mt-5">
@@ -217,7 +236,7 @@ const ResumePage = () => {
                                         {job.period}
                                     </span>
                                 </div>
-                                <p className="mb-1.5 text-[12.5px] font-semibold text-[#1f3a5f]">
+                                <p className="mb-1.5 text-[12.5px] font-semibold text-[#2f54c8]">
                                     {job.company}
                                 </p>
                                 <ul className="list-disc space-y-1 pl-4 marker:text-[#9ca3af]">
@@ -249,7 +268,7 @@ const ResumePage = () => {
                                         {e.period}
                                     </span>
                                 </div>
-                                <p className="text-[12px] font-semibold text-[#1f3a5f]">
+                                <p className="text-[12px] font-semibold text-[#2f54c8]">
                                     {e.school}
                                 </p>
                             </div>

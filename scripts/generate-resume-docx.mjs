@@ -32,7 +32,7 @@ const OUT_PATH = path.resolve(
 );
 
 /* ----- palette (mirrors the /resume page) ----- */
-const NAVY = "1F3A5F";
+const NAVY = "2F54C8";
 const INK = "1F2937";
 const HEADING_INK = "111827";
 const BODY = "374151";
@@ -63,6 +63,26 @@ const SKILLS = [
 ];
 
 const EXPERIENCE = [
+    {
+        role: "Full-Stack Developer",
+        company: "TrulyHome — Freelance / Client Build",
+        period: "May 2026 – June 2026 · 30-day build",
+        bullets: [
+            "Single-handedly designed, built, and shipped TrulyHome—a multi-role logistics and project-management platform—to production in a 30-day build, onboarding 13 staff accounts on launch day.",
+            "Architected a 5-role access model plus a public shipment-tracking surface on Next.js 16 (Server Components/Actions), React 19, and Supabase (Postgres 17, Realtime, RLS); hardened through two security red-team passes.",
+            "Shipped a 7-stage pipeline with damage-triggered reprocessing, live freight tracking (ODFL, FedEx), EBOL PDF generation, native mobile (Capacitor 8, iOS/Android), and Playwright E2E across 3 device profiles.",
+        ],
+    },
+    {
+        role: "Lead Developer",
+        company: "Zaptime",
+        period: "April 2026 – June 2026",
+        bullets: [
+            "Led development of Zaptime, a cross-device Electron time-tracking app with an AI assistant—authoring ~74% of the codebase (138 of 187 commits) and shipping 23 production Windows releases in ~2 months across a 6-person team.",
+            "Executed a zero-downtime Firebase → Supabase migration via a dual-backend abstraction with an identical IPC contract, enabling safe rollback while active users kept syncing.",
+            "Built a multi-provider AI assistant (OpenAI, OpenRouter, MiniMax) behind a table-driven abstraction with a deterministic activity-categorization engine, plus cross-device sync and a Node 18/20 GitHub Actions CI/CD pipeline (NSIS + Microsoft Store).",
+        ],
+    },
     {
         role: "Full Stack Software Engineer",
         company: "Switch",
@@ -104,7 +124,6 @@ const EXPERIENCE = [
             "Developed responsive front-end applications with Next.js, React, and Tailwind CSS, transforming wireframes and design specifications into intuitive, user-friendly interfaces.",
             "Implemented AI technologies across multiple projects, delivering innovative solutions that enhanced product capabilities and improved user experience.",
             "Built robust backend systems using Supabase, and Infisical for secure environment management, creating scalable and maintainable application architecture.",
-            "Led continuous codebase improvements by resolving bugs, optimizing performance, and implementing modern development practices to ensure high-quality deliverables.",
         ],
     },
     {

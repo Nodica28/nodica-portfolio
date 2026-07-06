@@ -6,13 +6,16 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import nodicaIcon from "@/app/assets/images/nodica_icon.png";
 
+const links = [
+    { href: "/#works", label: "Work" },
+    { href: "/#techstack", label: "Stack" },
+    { href: "/#about", label: "About" },
+    { href: "/#contact", label: "Contact" },
+];
+
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
 
     // Hide global chrome on the standalone, print-optimized résumé page.
     if (pathname === "/resume") {
@@ -20,150 +23,122 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-16">
-                    <div className="flex items-center">
-                        <Link
-                            href="/"
-                            className=" flex gap-1 text-xl font-bold text-gray-900 dark:text-white hover:text-[var(--primary)] dark:hover:text-[var(--secondary)] transition-all duration-300"
-                        >
-                            <Image
-                                src={nodicaIcon}
-                                alt="Nodica"
-                                width={32}
-                                height={32}
-                            />
-                            Nodica
-                        </Link>
-                    </div>
+        <nav
+            className="fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md"
+            style={{
+                backgroundColor:
+                    "color-mix(in srgb, var(--bg) 82%, transparent)",
+                borderColor: "var(--border)",
+            }}
+        >
+            <div className="mx-auto max-w-6xl px-6 lg:px-8">
+                <div className="flex h-16 items-center justify-between">
+                    <Link
+                        href="/"
+                        className="flex items-center gap-2 text-lg font-semibold tracking-tight text-[var(--text)] transition-colors duration-300 hover:text-[var(--accent)]"
+                    >
+                        <Image
+                            src={nodicaIcon}
+                            alt="Nodica"
+                            width={28}
+                            height={28}
+                        />
+                        Nodica
+                    </Link>
 
-                    {/* Desktop menu */}
-                    <div className="hidden md:flex items-center space-x-8">
-                        <Link
-                            href="/#works"
-                            className="text-gray-600 dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-[var(--secondary)] transition-all duration-300"
-                        >
-                            Works
-                        </Link>
-                        <Link
-                            href="/#techstack"
-                            className="text-gray-600 dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-[var(--secondary)] transition-all duration-300"
-                        >
-                            Tech Stack
-                        </Link>
-                        <Link
-                            href="/#about"
-                            className="text-gray-600 dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-[var(--secondary)] transition-all duration-300"
-                        >
-                            About
-                        </Link>
-                        <Link
-                            href="/#contact"
-                            className="text-gray-600 dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-[var(--secondary)] transition-all duration-300"
-                        >
-                            Contact
-                        </Link>
-                    </div>
-
-                    <div className="hidden md:flex items-center">
+                    {/* Desktop: links + CTA grouped on the right */}
+                    <div className="hidden items-center gap-8 md:flex">
+                        <div className="flex items-center gap-7 text-sm">
+                            {links.map((link) => (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    className="text-[var(--muted)] transition-colors duration-300 hover:text-[var(--text)]"
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </div>
                         <Link
                             href="/resume"
-                            className="text-white font-bold py-3 px-8 bg-[var(--primary)] rounded-lg transition hover:bg-gray-100 dark:hover:bg-[var(--tertiary)] hover:transition-all duration-300"
+                            className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-[var(--on-accent)] transition-colors duration-300 hover:bg-[var(--accent-hover)]"
                         >
-                            Resume
+                            Résumé
                         </Link>
                     </div>
 
                     {/* Mobile menu button */}
-                    <div className="md:hidden flex items-center">
-                        <button
-                            onClick={toggleMenu}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none transition"
-                            aria-expanded="false"
-                        >
-                            <span className="sr-only">Open main menu</span>
-                            {!isMenuOpen ? (
-                                <svg
-                                    className="block h-6 w-6"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M4 6h16M4 12h16M4 18h16"
-                                    />
-                                </svg>
-                            ) : (
-                                <svg
-                                    className="block h-6 w-6"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M6 18L18 6M6 6l12 12"
-                                    />
-                                </svg>
-                            )}
-                        </button>
-                    </div>
+                    <button
+                        onClick={() => setIsMenuOpen((open) => !open)}
+                        className="inline-flex items-center justify-center rounded-md p-2 text-[var(--muted)] transition-colors hover:text-[var(--text)] focus:outline-none md:hidden"
+                        aria-expanded={isMenuOpen}
+                        aria-label="Toggle menu"
+                    >
+                        <span className="sr-only">Open main menu</span>
+                        {!isMenuOpen ? (
+                            <svg
+                                className="block h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M4 6h16M4 12h16M4 18h16"
+                                />
+                            </svg>
+                        ) : (
+                            <svg
+                                className="block h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>
+                        )}
+                    </button>
                 </div>
             </div>
 
-            {/* Mobile menu, show/hide based on menu state */}
+            {/* Mobile menu */}
             <div
-                className={`md:hidden transition-all duration-300 ease-linear ${
-                    isMenuOpen
-                        ? "max-h-screen opacity-100"
-                        : "max-h-0 opacity-0 overflow-hidden"
+                className={`overflow-hidden transition-all duration-300 ease-linear md:hidden ${
+                    isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                 }`}
             >
-                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 text-center">
-                    <Link
-                        href="/#works"
-                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        Works
-                    </Link>
-                    <Link
-                        href="/#techstack"
-                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        Tech Stack
-                    </Link>
-                    <Link
-                        href="/#about"
-                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        About
-                    </Link>
-                    <Link
-                        href="/#contact"
-                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        Contact
-                    </Link>
+                <div
+                    className="space-y-1 border-t px-4 pb-4 pt-3"
+                    style={{
+                        backgroundColor: "var(--bg)",
+                        borderColor: "var(--border)",
+                    }}
+                >
+                    {links.map((link) => (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block rounded-md px-3 py-2.5 text-base text-[var(--muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--text)]"
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
                     <Link
                         href="/resume"
                         onClick={() => setIsMenuOpen(false)}
-                        className="block text-[var(--primary)] font-bold dark:text-[var(--primary)] mt-2 py-3 px-8 border border-[var(--primary)] rounded-lg transition hover:bg-gray-100 dark:hover:bg-[var(--primary)] hover:text-[var(--primary)] dark:hover:text-white hover:transition-all"
+                        className="mt-2 block rounded-lg bg-[var(--accent)] px-3 py-2.5 text-center text-base font-medium text-[var(--on-accent)] transition-colors hover:bg-[var(--accent-hover)]"
                     >
-                        Resume
+                        Résumé
                     </Link>
                 </div>
             </div>

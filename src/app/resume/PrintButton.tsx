@@ -5,7 +5,7 @@ const PrintButton = () => {
         <button
             type="button"
             onClick={() => window.print()}
-            className="inline-flex items-center gap-2 rounded-md border border-[#1f3a5f] px-4 py-2 text-sm font-semibold text-[#1f3a5f] transition-colors duration-200 hover:bg-[#1f3a5f] hover:text-white"
+            className="inline-flex items-center gap-2 rounded-md border border-[#2f54c8] px-4 py-2 text-sm font-semibold text-[#2f54c8] transition-colors duration-200 hover:bg-[#2f54c8] hover:text-white"
         >
             <svg
                 className="h-4 w-4"

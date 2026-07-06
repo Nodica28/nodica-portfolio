@@ -56,8 +56,9 @@ Dark mode becomes an explicit class/scheme, not a raw `prefers-color-scheme` inv
 ### Spacing, layout, motion
 - 4/8-based spacing scale; consistent section rhythm (`~py-24`); `max-w-6xl` container.
 - Motion: subtle fade/translate-on-scroll (IntersectionObserver or CSS) + clean hover/focus
-  states; honor `prefers-reduced-motion`. **Remove** `three.js` + `vanta` and the two
-  `beforeInteractive` CDN `<Script>`s in `Hero.tsx`.
+  states; honor `prefers-reduced-motion`. **Keep the Vanta birds** in the Hero (user request),
+  recolored to indigo and loaded lazily via a client component (no `beforeInteractive`
+  blocking; skipped under reduced-motion).
 
 ## Information architecture (single page, smooth scroll)
 
@@ -81,14 +82,15 @@ Dark mode becomes an explicit class/scheme, not a raw `prefers-color-scheme` inv
 - `src/app/globals.css` — new tokens, fixed `@theme`, type scale, motion + reduced-motion utils.
 - `src/app/layout.tsx` — standardize fonts; full `Metadata` (title template, description,
   keywords, authors, `metadataBase`, Open Graph + Twitter card + OG image, icons); set lang/theme.
-- `src/components/sections/Hero.tsx` — rebuild; remove vanta/three + CDN scripts.
+- `src/components/sections/Hero.tsx` — rebuilt as a dark hero band with light-on-dark text; the
+  Vanta birds are kept (recolored to indigo) via a new client `VantaBackground.tsx`.
 - `src/components/sections/Projects.tsx` → **Selected Work**: featured rows + "More work" list;
   add per-project `role`, `impact`/`metrics` fields; keep existing icon map usage.
 - `src/components/sections/TechStack.tsx` → **Capabilities**: curate + regroup.
 - `src/components/sections/About.tsx` — tighten copy (value prop + experience signal).
 - `src/components/sections/Contact.tsx` — CTA + availability (already de-cluttered).
 - `src/components/layout/Navbar.tsx`, `Footer.tsx` — restyle to new tokens; Footer gets socials.
-- `package.json` — remove `three` + `vanta` deps.
+- `package.json` — keep `three` + `vanta` deps (Hero birds).
 - **New:** `public` OG image + favicon/icons; `src/app/sitemap.ts`, `src/app/robots.ts`; JSON-LD
   `Person` (script in layout or a component).
 
